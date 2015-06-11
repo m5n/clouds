@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Clouds</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/clouds.css">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <h4 class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</h4>
+        <![endif]-->
+
+        <div id="menu">
+            <a href="#cloudy" id="cloudy" data-mincolor="210,210,210" data-maxcolor="255,255,255" data-colorinstr="same">Cloudy</a> |
+            <a href="#windy" id="windy" data-mincolor="210,210,210" data-maxcolor="255,255,255" data-colorinstr="same">Windy</a> |
+            <a href="#stormy" id="stormy" data-mincolor="40,40,40" data-maxcolor="130,130,130" data-colorinstr="same">Stormy</a> |
+            <a href="#foggy" id="foggy" data-mincolor="150,150,150" data-maxcolor="210,210,210" data-colorinstr="same">Foggy</a> |
+            <a href="#colors" id="colors" data-mincolor="0,0,0" data-maxcolor="255,255,255">Colors</a> |
+            <a href="#sunset" id="sunset" data-mincolor="255,75,0" data-maxcolor="255,225,0">Sunset</a>
+        </div>
+
+        <div id="clouds"><span id="text"></span></div>
+
+        <script type="text/html" id="cloud-template">
+          <span class="cloud" id="{id}" style="z-index: {zIndex};"></span>
+        </script>
+
+        <script src="js/vendor/jquery-1.11.3.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/clouds.js"></script>
+    </body>
+</html>

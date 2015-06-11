@@ -1,0 +1,133 @@
+/* Make gradient backgrounds show up. */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    /* Don't cause scrollbars. */
+    overflow: hidden;
+}
+
+body.cloudy,
+body.windy,
+body.stormy {
+    background-color: #0af;
+}
+
+body.foggy {
+    background-color: rgb(150, 150, 150);   /* Same as #fogged's data-mincolor. */
+}
+
+body.colors {
+    /* Thanks, http://www.cssmatic.com/gradient-generator */
+    background: rgba(76,76,76,1);/* Old Browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(76,76,76,1)), color-stop(12%, rgba(89,89,89,1)), color-stop(25%, rgba(102,102,102,1)), color-stop(39%, rgba(71,71,71,1)), color-stop(50%, rgba(44,44,44,1)), color-stop(51%, rgba(0,0,0,1)), color-stop(60%, rgba(17,17,17,1)), color-stop(76%, rgba(43,43,43,1)), color-stop(91%, rgba(28,28,28,1)), color-stop(100%, rgba(19,19,19,1)));/* Chrome, Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%); /* Opera 11.10+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%); /* IE 10+ */
+    background: radial-gradient(ellipse at center, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);/* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=1 );/* IE6-9 fallback on horizontal gradient */
+}
+
+body.sunset {
+    /* Thanks, http://www.cssmatic.com/gradient-generator */
+    background: rgba(0,0,0,1);/* Old Browsers */
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(250,121,8,1) 59%, rgba(0,0,0,1) 59%, rgba(80,79,82,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,0,0,1)), color-stop(1%, rgba(0,0,0,1)), color-stop(59%, rgba(250,121,8,1)), color-stop(59%, rgba(0,0,0,1)), color-stop(100%, rgba(80,79,82,1)));/* Chrome, Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(250,121,8,1) 59%, rgba(0,0,0,1) 59%, rgba(80,79,82,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(250,121,8,1) 59%, rgba(0,0,0,1) 59%, rgba(80,79,82,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(250,121,8,1) 59%, rgba(0,0,0,1) 59%, rgba(80,79,82,1) 100%); /* IE 10+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 1%, rgba(250,121,8,1) 59%, rgba(0,0,0,1) 59%, rgba(80,79,82,1) 100%);/* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#504f52', GradientType=0 );/* IE6-9 */
+}
+
+#menu {
+    position: absolute;
+    top: 2em;
+    right: 2em;
+    background-color: white;
+    padding: 1em;
+
+    /* Clouds should not obstruct the menu. */
+    z-index: 100;
+
+    /* Transparency. */
+  	filter: alpha(opacity=50);
+  	opacity: 0.5;
+}
+
+#text {
+    color: black;
+    font-size: 250px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+
+    /* Allow clouds to move both behind as well as in front of the text. */
+    z-index: 60;
+    position: relative;
+
+    /* Bring the text out a bit more from the background by adding an outline. */
+    -webkit-text-stroke: 1px white;
+    text-shadow: 3px 3px 0 white, -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+
+    /* Because the text is so big, it ends up looking very stark, so soften it.
+       This also makes the whole thing look more like an old movie. */
+    /* Thanks, http://jordanhollinger.com/2014/01/29/css-gaussian-blur-behind-a-translucent-box/ */
+    filter: url('blur.svg#blur1');
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+}
+
+#clouds {
+    /* Center horizontally and vertically. */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* First state of a cloud fragment. */
+.cloud {
+    color: white;
+    padding: 6em 10em;
+    position: absolute;
+    border-radius: 20px;
+    border: 2px solid transparent;
+
+    /* Animation speed. */
+    -webkit-transition: 10s;
+    transition: 10s;
+
+    /* Blurring. */
+    filter: url('blur.svg#blur50');
+    -webkit-filter: blur(50px);
+    filter: blur(50px);
+
+    /* TODO: on IE, the blur.svg doesn't seem to do anything... */
+}
+
+/* Second state of a cloud fragment. */
+.cloud.move {
+    padding: 7em 11em;
+
+    zoom: 1;
+    filter: url('blur.svg#blur75');
+    -webkit-filter: blur(75px);
+    filter: blur(75px);
+}
+
+/* Speed up windy clouds. */
+.windy .cloud {
+    -webkit-transition: 7s;
+    transition: 7s;
+}
+
+/* Speed up stormy clouds even more. */
+.stormy .cloud {
+    -webkit-transition: 5s;
+    transition: 5s;
+}
