@@ -9,6 +9,7 @@ body {
     overflow: hidden;
 }
 
+body,
 body.cloudy,
 body.windy,
 body.stormy {
@@ -99,8 +100,8 @@ body.sunset {
     border: 2px solid transparent;
 
     /* Animation speed. */
-    -webkit-transition: 10s;
-    transition: 10s;
+    -webkit-transition: 7s;
+    transition: 7s;
 
     /* Blurring. */
     filter: url('blur.svg#blur50');
@@ -120,13 +121,16 @@ body.sunset {
     filter: blur(75px);
 }
 
-/* Speed up windy clouds. */
-.windy .cloud {
-    -webkit-transition: 7s;
-    transition: 7s;
+/* Slow down non-windy clouds. */
+.cloudy .cloud,
+.foggy .cloud,
+.colors .cloud,
+.sunset .cloud {
+    -webkit-transition: 10s;
+    transition: 10s;
 }
 
-/* Speed up stormy clouds even more. */
+/* Speed up stormy clouds. */
 .stormy .cloud {
     -webkit-transition: 5s;
     transition: 5s;

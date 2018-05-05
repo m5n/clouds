@@ -1,4 +1,4 @@
-/*global $, Math, setInterval */
+/*global $, location, Math, setInterval */
 'use strict';
 
 $(function () {
@@ -67,6 +67,20 @@ $(function () {
 
     function toNumber(value) {
         return parseInt(value, 10);
+    }
+
+    // Add custom menu item, if any.
+    if (location.hash) {
+        if (!$(location.hash).length) {
+            var first = $('#menu a:first-child'),
+                elt = first.clone(),
+                txt = location.hash.substring(1);
+
+            elt.attr('href', location.hash);
+            elt.attr('id', txt);
+            elt.text(txt);
+            $('#menu').prepend(' | ').prepend(elt);
+        }
     }
 
     // Menu handler.
